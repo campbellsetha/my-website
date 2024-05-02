@@ -1,0 +1,61 @@
+:root { --accessible-beige: #D1C7B8; }
+:root { --urbane-bronze: #54504A; }
+:root { --alabaster: #F2F0E6;}
+:root { --black-of-night: #323639;}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header, main {
+    background-color: var(--alabaster);
+    padding: 0.5em;
+}
+nav, footer {
+    background-color: var(--accessible-beige);
+    padding: 1em;
+}
+
+nav {
+    border-top-right-radius: 0.75em;
+    border-top-left-radius: 0.75em;
+}
+
+nav a {
+    color: var(--urbane-bronze);
+    font-size: 150%;
+    font-variant:small-caps;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--black-of-night);
+    font-weight: bolder; 
+}
+
+main p {
+    padding: 1em;
+}
+
+.website-ideas ul {
+    font-weight: bold;
+    list-style-type: none;
+}
+
+#rue-photo {
+    border-radius: 50%;
+    margin: 2em;
+    border: 10px solid var(--urbane-bronze);
+}
+
+footer {
+    border-bottom-right-radius: 0.75em;
+    border-bottom-left-radius: 0.75em;
+}
+
+footer p {
+    font-style: italic;
+    color: var(--urbane-bronze);
+}
+

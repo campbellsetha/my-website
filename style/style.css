@@ -2,31 +2,100 @@
 :root { --urbane-bronze: #54504A; }
 :root { --alabaster: #F2F0E6;}
 :root { --black-of-night: #323639;}
+:root { --greenblack: #373a3a;}
 
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header, main {
-    background-color: var(--alabaster);
-    padding: 0.5em;
+header, footer, nav {
+    padding: 0.75em;
 }
+
 nav, footer {
     background-color: var(--accessible-beige);
+}
+
+header {
+    margin-top: 7.5em;
+    margin-bottom: 1em;
+    background-color: var(--urbane-bronze);
+    color: var(--accessible-beige);
+    border: 20px solid rgb(239, 116, 72);
+    border-width: 20px 0;
+}
+
+body {
+    background-color: rgba(208, 192, 169, 0.9);
+    color: var(--alabaster);
+}
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+section:hover, aside:hover {
+    background-color: rgba(55, 58, 58, 0.8);
+}
+
+section, aside {
+    background-color: var(--greenblack);
+    border: 0.01em solid var(--alabaster);
     padding: 1em;
+    vertical-align: top;
+    margin: 0.5em, 0em;
+}
+
+.short-float {
+    width: 30%;
+}
+
+.long-float {
+    width: 70%;
+}
+
+.short-float, .long-float {
+    text-align: left;
+}
+
+.row-right > .short-float, .row-left > .long-float {
+    float: right;
+}
+
+.row-left > .short-float, .row-right > .long-float {
+    float: left;
 }
 
 nav {
-    border-top-right-radius: 0.75em;
-    border-top-left-radius: 0.75em;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    top: 0;
+    position: fixed;
+}
+
+#root-page {
+    font-size: 250%;
+}
+
+.community-title {
+    font-size: 300%;
+    padding: 1em;
+}
+
+aside a {
+    text-decoration: none;
+    color: var(--alabaster);
 }
 
 nav a {
     color: var(--urbane-bronze);
-    font-size: 150%;
+    font-size: 125%;
     font-variant:small-caps;
     text-decoration: none;
     font-weight: bold;
+    margin-right: 1em;
+    vertical-align: bottom;
 }
 
 nav a:hover {
@@ -38,24 +107,66 @@ main p {
     padding: 1em;
 }
 
-.website-ideas ul {
+ul {
     font-weight: bold;
     list-style-type: none;
 }
+#rue-space {
+    padding: 0em;
+    margin: 0em;
+    width: fit-content;
+}
+
+img:hover {
+    opacity: 40%;
+}
 
 #rue-photo {
-    border-radius: 50%;
-    margin: 2em;
-    border: 10px solid var(--urbane-bronze);
+    object-fit: cover;
 }
 
 footer {
-    border-bottom-right-radius: 0.75em;
-    border-bottom-left-radius: 0.75em;
+    border-radius: 0em 0em 0.75em 0.75em;
+    clear: both;
 }
 
 footer p {
+    text-align: right;;
     font-style: italic;
     color: var(--urbane-bronze);
 }
 
+#woods-main {
+    margin-top: 7.5em;
+    width: 100%;
+    height: auto;
+    background-image: url(../images/woods.jpg);
+    object-fit: contain;
+}
+
+#trails-main, #village-main {
+    margin-top: 7.5em;
+    width: 100%;
+    background: var(--greenblack);
+}
+
+table th {
+    padding: 0.2em 6em;
+}
+
+td, th {
+    background-color: var(--accessible-beige);
+    color: var(--greenblack);
+}
+
+nav > .community {
+    font-size: 2em;
+    padding: 0em 5em;
+    color: var(--urbane-bronze);
+}
+
+.long-float a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: var(--alabaster);
+}

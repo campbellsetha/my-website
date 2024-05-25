@@ -150,13 +150,12 @@ footer p {
     background: var(--greenblack);
 }
 
-table th {
-    padding: 0.2em 6em;
-}
-
 td, th {
-    background-color: var(--accessible-beige);
-    color: var(--greenblack);
+    background-color: var(--greenblack);
+    color: var(--alabaster);
+    text-align: left;
+    min-width: 150px;
+    padding: 0.5em;
 }
 
 nav > .community {
@@ -170,3 +169,5 @@ nav > .community {
     font-weight: bolder;
     color: var(--alabaster);
 }
+
+@media only screen and ()

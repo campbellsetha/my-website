@@ -8,7 +8,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header, footer, nav {
+header, footer{
     padding: 0.75em;
 }
 
@@ -16,8 +16,13 @@ nav, footer {
     background-color: var(--accessible-beige);
 }
 
+#home-logo {
+    height: auto;
+    width: 3em;
+}
+
 header {
-    margin-top: 7.5em;
+    margin-top: 10.5em;
     margin-bottom: 1em;
     background-color: var(--urbane-bronze);
     color: var(--accessible-beige);
@@ -41,7 +46,6 @@ section:hover, aside:hover {
 section, aside {
     background-color: var(--greenblack);
     border: 0.01em solid var(--alabaster);
-    padding: 1em;
     vertical-align: top;
     margin: 0.5em, 0em;
 }
@@ -68,11 +72,16 @@ section, aside {
 
 nav {
     display: flex;
+    align-items: center;
     flex-direction: row;
     width: 100%;
     top: 0;
     position: fixed;
+    padding: 0em 1em;
+    z-index: 1000;
+    background-color: var(--accessible-beige);
 }
+
 
 #root-page {
     font-size: 250%;
@@ -88,19 +97,75 @@ aside a {
     color: var(--alabaster);
 }
 
-nav a {
+nav a{
     color: var(--urbane-bronze);
-    font-size: 125%;
+    font-size: 175%;
     font-variant:small-caps;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 1em;
-    vertical-align: bottom;
+    vertical-align: middle;
+    line-height: 1em;
+    padding: 0.5em 1em;
 }
 
-nav a:hover {
-    color: var(--black-of-night);
-    font-weight: bolder; 
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 175%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+    margin-right: 1em;
+    color: var(--urbane-bronze);
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--accessible-beige);
+    opacity: 85%;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul ul li {
+    font-size: 0.5em;
+    width: 8em;
+    margin: 0;
+}
+
+nav ul ul li a {
+    font-size: 100%;
+    padding: 0.5em 1em;
+    display: block;
+}
+
+nav ul li:hover {
+    font-weight: bolder;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+#about-main {
+    margin-top: 10em;
+}
+
+#about-me h1, #about-site h1 {
+    text-align: center;
+}
+
+p > a {
+    text-decoration: none;
+    color: var(--alabaster);
+    font-weight: bolder;
 }
 
 main p {
@@ -111,18 +176,52 @@ ul {
     font-weight: bold;
     list-style-type: none;
 }
+
 #rue-space {
     padding: 0em;
     margin: 0em;
     width: fit-content;
 }
 
-img:hover {
+img:hover, nav a:hover {
+    filter: brightness(30%);
+    font-weight: bolder;
+}
+
+.short-float {
+    padding: 2%;
+    align-items: center;
+}
+
+.short-float:hover {
     opacity: 40%;
 }
 
 #rue-photo {
     object-fit: cover;
+    
+}
+
+.community-title {
+    -webkit-text-stroke: 0.1rem var(--black-of-night);
+}
+
+.long-float#community-woods {
+    background-image: url(../images/woods.jpg);
+    background-size: cover;
+    filter: blur(0.05em);
+}
+
+.long-float#community-trails {
+    background-image: url(../images/trail.jpeg);
+    background-size: cover;
+    filter: blur(0.07em);
+}
+
+.long-float#community-village {
+    background-image: url(../images/village.png);
+    background-size: cover;
+    filter: blur(0.05em);
 }
 
 footer {
@@ -137,7 +236,7 @@ footer p {
 }
 
 #woods-main {
-    margin-top: 7.5em;
+    margin-top: 10.5em;
     width: 100%;
     height: auto;
     background-image: url(../images/woods.jpg);
@@ -145,9 +244,17 @@ footer p {
 }
 
 #trails-main, #village-main {
-    margin-top: 7.5em;
+    margin-top: 10.5em;
     width: 100%;
     background: var(--greenblack);
+}
+
+table {
+    overflow: scroll;
+}
+
+table td + td {
+    border-left: 0.1em solid var(--urbane-bronze);
 }
 
 td, th {
@@ -156,6 +263,8 @@ td, th {
     text-align: left;
     min-width: 150px;
     padding: 0.5em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 nav > .community {
@@ -170,4 +279,10 @@ nav > .community {
     color: var(--alabaster);
 }
 
-@media only screen and ()
+@media only screen and (max-width: 1408px) {
+
+}
+
+@media only screen and (max-width: 650px) {
+
+}

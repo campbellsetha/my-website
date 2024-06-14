@@ -1,75 +1,20 @@
-:root { --accessible-beige: #D1C7B8; }
-:root { --urbane-bronze: #54504A; }
-:root { --alabaster: #F2F0E6;}
-:root { --black-of-night: #323639;}
-:root { --greenblack: #373a3a;}
+/* Universial selections, colors selection 
+based off sherwin williams paint colors */
+:root {
+    --accessible-beige: #D1C7B8;
+    --urbane-bronze: #54504A;
+    --alabaster: #F2F0E6;
+    --black-of-night: #323639;
+    --greenblack: #373a3a;
+}
 
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header, footer{
-    padding: 0.75em;
-}
-
-nav, footer {
-    background-color: var(--accessible-beige);
-}
-
-#home-logo {
-    height: auto;
-    width: 3em;
-}
-
-header {
-    margin-top: 10.5em;
-    margin-bottom: 1em;
-    background-color: var(--urbane-bronze);
-    color: var(--accessible-beige);
-    border: 20px solid rgb(239, 116, 72);
-    border-width: 20px 0;
-}
-
-body {
-    background-color: rgba(208, 192, 169, 0.9);
-    color: var(--alabaster);
-}
-div {
-    display: flex;
-    flex-direction: row;
-}
-
-section:hover, aside:hover {
-    background-color: rgba(55, 58, 58, 0.8);
-}
-
-section, aside {
-    background-color: var(--greenblack);
-    border: 0.01em solid var(--alabaster);
-    vertical-align: top;
-    margin: 0.5em, 0em;
-}
-
-.short-float {
-    width: 30%;
-}
-
-.long-float {
-    width: 70%;
-}
-
-.short-float, .long-float {
-    text-align: left;
-}
-
-.row-right > .short-float, .row-left > .long-float {
-    float: right;
-}
-
-.row-left > .short-float, .row-right > .long-float {
-    float: left;
-}
-
+/* Common element attributes across all pages.
+The order is descending based on how they
+appear on the page. */
 nav {
     display: flex;
     align-items: center;
@@ -82,44 +27,29 @@ nav {
     background-color: var(--accessible-beige);
 }
 
-
-#root-page {
-    font-size: 250%;
-}
-
-.community-title {
-    font-size: 300%;
-    padding: 1em;
-}
-
-aside a {
-    text-decoration: none;
-    color: var(--alabaster);
-}
-
-nav a{
+nav a,
+nav ul li,
+nav ul li ul li {
     color: var(--urbane-bronze);
-    font-size: 175%;
-    font-variant:small-caps;
+    font-variant: small-caps;
     text-decoration: none;
     font-weight: bold;
     vertical-align: middle;
     line-height: 1em;
-    padding: 0.5em 1em;
+    padding: 0.5em 0.5em;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    font-size: 175%;
+    font-size: 2em;
     display: flex;
     align-items: center;
 }
 
 nav ul li {
     position: relative;
-    margin-right: 1em;
     color: var(--urbane-bronze);
 }
 
@@ -129,43 +59,191 @@ nav ul ul {
     top: 100%;
     left: 0;
     background-color: var(--accessible-beige);
-    opacity: 85%;
-    padding: 0;
+    opacity: 95%;
     list-style-type: none;
 }
 
-nav ul ul li {
-    font-size: 0.5em;
-    width: 8em;
-    margin: 0;
-}
-
 nav ul ul li a {
-    font-size: 100%;
-    padding: 0.5em 1em;
+    font-size: 40%;
+    padding: 0.1em 0.5em;
     display: block;
 }
 
-nav ul li:hover {
+nav ul li:hover,
+nav ul li a:hover {
+    font-weight: bolder;
+    color: var(--alabaster);
+}
+
+nav ul li:hover>ul {
+    display: block;
+}
+
+img:hover,
+nav a:hover {
+    filter: brightness(100%);
     font-weight: bolder;
 }
 
-nav ul li:hover > ul {
-    display: block;
+nav,
+footer {
+    background-color: var(--accessible-beige);
 }
 
-#about-main {
-    margin-top: 10em;
+/* Specific element modifiers within the nav section */
+.root-page {
+    font-size: 250%;
 }
 
-#about-me h1, #about-site h1 {
+.home-logo-web {
+    filter: brightness(30%);
+    height: auto;
+    width: 3em;
+}
+
+#mobile-menu {
+    display: none;
+}
+
+.mobile-button {
+    width: 2em;
+    height: auto;
+}
+
+/* common elements used on all web pages. */
+header {
+    margin-top: 9.6em;
     text-align: center;
+    background-color: var(--greenblack);
+    border: 0.09em solid var(--alabaster);
+    color: var(--alabaster);
 }
 
-p > a {
+header,
+footer {
+    padding: 0.75em;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--accessible-beige);
+    color: var(--alabaster);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6em;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+section,
+aside {
+    background-color: var(--greenblack);
+    border: 0.09em solid var(--alabaster);
+    margin: 0.5em, 0em;
+}
+
+aside a {
     text-decoration: none;
     color: var(--alabaster);
+}
+
+/* class based modifiers across
+the following pages: index.html, 
+woods.html, trails.html, and 
+ village.html */
+.short-float {
+    padding: 2%;
+    align-content: center;
+    width: 30%;
+}
+
+.long-float {
+    width: 70%;
+    padding: 1em;
+}
+
+.long-float a {
+    text-decoration: none;
     font-weight: bolder;
+    color: var(--alabaster);
+}
+
+.short-float,
+.long-float {
+    text-align: left;
+}
+
+.row-right>.short-float,
+.row-left>.long-float {
+    float: right;
+}
+
+.row-left>.short-float,
+.row-right>.long-float {
+    float: left;
+}
+
+/* main page modifiers (index.html) */
+.main-homepage {
+    margin-top: 10.5em;
+}
+
+.main-homepage div {
+    display: flex;
+    flex-direction: row;
+    max-height: 15em;
+}
+
+main .long-float#community-woods {
+    background-image: url(../media/images/woods.jpg);
+    background-position: center center;
+    background-size: cover;
+    filter: blur(0.05em);
+}
+
+main .long-float#community-trails {
+    background-image: url(../media/images/trail.jpeg);
+    background-position: center bottom;
+    background-size: cover;
+    filter: blur(0.07em);
+}
+
+main .long-float#community-village {
+    background-image: url(../media/images/village.png);
+    background-position: center center;
+    background-size: cover;
+    filter: blur(0.05em);
+}
+
+.short-float#community-woods:hover,
+.short-float#community-trails:hover,
+.short-float#community-village:hover {
+    background-color: rgba(55, 58, 58, 0.8);
+    opacity: 40%;
+}
+
+.community-title {
+    font-size: 300%;
+    padding: 2%;
+    -webkit-text-stroke: 0.1rem var(--black-of-night);
+}
+
+#mobile-home {
+    display: none;
+}
+
+/* Modifiers across various pages */
+.mobile-table-title {
+    display: none;
 }
 
 main p {
@@ -177,112 +255,246 @@ ul {
     list-style-type: none;
 }
 
-#rue-space {
-    padding: 0em;
-    margin: 0em;
-    width: fit-content;
-}
-
-img:hover, nav a:hover {
-    filter: brightness(30%);
-    font-weight: bolder;
-}
-
-.short-float {
-    padding: 2%;
-    align-items: center;
-}
-
-.short-float:hover {
-    opacity: 40%;
-}
-
-#rue-photo {
-    object-fit: cover;
-    
-}
-
-.community-title {
-    -webkit-text-stroke: 0.1rem var(--black-of-night);
-}
-
-.long-float#community-woods {
-    background-image: url(../images/woods.jpg);
-    background-size: cover;
-    filter: blur(0.05em);
-}
-
-.long-float#community-trails {
-    background-image: url(../images/trail.jpeg);
-    background-size: cover;
-    filter: blur(0.07em);
-}
-
-.long-float#community-village {
-    background-image: url(../images/village.png);
-    background-size: cover;
-    filter: blur(0.05em);
-}
-
-footer {
-    border-radius: 0em 0em 0.75em 0.75em;
-    clear: both;
-}
-
-footer p {
-    text-align: right;;
-    font-style: italic;
-    color: var(--urbane-bronze);
-}
-
-#woods-main {
-    margin-top: 10.5em;
-    width: 100%;
-    height: auto;
-    background-image: url(../images/woods.jpg);
-    object-fit: contain;
-}
-
-#trails-main, #village-main {
-    margin-top: 10.5em;
+/* modfiers for specific pages' main sections.*/
+#woods-main,
+#trails-main,
+#village-main {
     width: 100%;
     background: var(--greenblack);
 }
 
+#form-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    background-image: url(/media/images/background.png);
+}
+
+#form-main header {
+    border-radius: 0.4em;
+    opacity: 85%;
+}
+
+#about-main {
+    margin-top: 10em;
+    padding-bottom: 1em;
+}
+
+/* about page formatting including 
+establishing grid layout, video and
+image sizing and handling.*/
+#about-me h1,
+#about-site h1,
+#about-me h2 {
+    text-align: center;
+}
+
+#about-me {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-row {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    gap: 1em 1em;
+    padding: 1em;
+    width: 95%;
+    overflow: hidden;
+}
+
+.photo-row img,
+.photo-row video {
+    width: 100%;
+    height: auto;
+    overflow: none;
+    border: 0.07em solid var(--alabaster);
+    border-radius: 0.4em;
+}
+
+/* table formatting for community pages */
 table {
+    height: auto;
+    width: auto;
     overflow: scroll;
 }
 
-table td + td {
-    border-left: 0.1em solid var(--urbane-bronze);
-}
-
-td, th {
+td,
+th {
     background-color: var(--greenblack);
     color: var(--alabaster);
     text-align: left;
-    min-width: 150px;
+    min-width: 10%;
     padding: 0.5em;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-nav > .community {
-    font-size: 2em;
-    padding: 0em 5em;
-    color: var(--urbane-bronze);
+/* form formatting on the participate page (form.html)*/
+form {
+    background-color: var(--black-of-night);
+    padding: 1.5em;
+    margin: 2em auto;
+    border: 0.09em solid var(--alabaster);
+    border-radius: 0.4em;
+    max-width: 40em;
+    width: 80%;
+    opacity: 85%;
 }
 
-.long-float a {
-    text-decoration: none;
-    font-weight: bolder;
-    color: var(--alabaster);
+form div {
+    margin-bottom: 1em;
 }
 
-@media only screen and (max-width: 1408px) {
-
+form label {
+    display: block;
+    margin: 0.5em;
+    font-weight: bold;
+    font-size: 75%;
+    align-content: center;
 }
 
-@media only screen and (max-width: 650px) {
+form input[type="text"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+}
 
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.2em;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #45a049e1;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 4.5em;
+    clear: both;
+    width: 100%;
+}
+
+/* footer formatting for grid layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    color: var(--urbane-bronze)
+}
+
+.grid-container * {
+    font-size: 0.8em;
+}
+
+.grid-item-2 {
+    grid-column-start: 2;
+    grid-column-end: 8;
+}
+
+.grid-item-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.grid-item-3 ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-item-3 ul li {
+    padding-right: 2em;
+}
+
+.grid-item-4 {
+    grid-row-start: 2;
+    grid-column-start: 5;
+    grid-column-end: 8;
+}
+
+/* Responsive design features will adjust the page 
+elements to make navigation easier on smaller screens.
+First break point adjusts the community pages and allows
+the tables and headers to be more easily read. */
+@media only screen and (max-width: 1184px) {
+    .main-web {
+        display: none;
+    }
+
+    #village-main,
+    #woods-main,
+    #trails-main {
+        flex-direction: column;
+    }
+
+    #village-main aside,
+    #woods-main aside,
+    #trails-main aside {
+        display: none;
+    }
+
+    #village-main section,
+    #woods-main section,
+    #trails-main section {
+        height: auto;
+        width: 100%;
+    }
+
+    .mobile-table-title,
+    .mobile-table-title h2 {
+        margin: 0;
+        padding: 0;
+        display: block;
+        border: 0 solid;
+        font-size: 1.35em;
+        font-weight: bolder;
+    }
+
+    table {
+        overflow: auto;
+        font-size: 90%;
+    }
+}
+
+/* Second breakpoint changes backgrounds on home
+and participate pages (index.html and form.html).
+It also modifies the nav bar to operate from the 
+hamburger menu icon.*/
+@media only screen and (max-width: 805px) {
+    #web-menu {
+        display: none;
+    }
+
+    #mobile-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-homepage .row-right,
+    .main-homepage .row-left {
+        display: none;
+    }
+
+    #mobile-home {
+        display: flex;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
 }

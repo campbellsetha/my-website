@@ -1,67 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to McCormick Woods</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body>
-    <nav id="web-menu">
-        <!--The nav tags set up what will be the nav bar, I did a simple home link to return to this html page that will show on all pages. Other links to follow-->
-        <a id="root-page" href="../index.html"><img id="home-logo" src="/images/logo-main.png"></a>
-        <ul>
-            <li>Communties
+    <!--Nav section for both web and mobile based viewing. Mobile viewing operates from a single hamburger menu.-->
+    <nav>
+        <!--The web based viewing nav bar.-->
+        <a class="root-page" href="../index.html"><img class="home-logo-web" src="/media/images/logo-main.png"
+                alt="McCormick Logo"></a>
+        <ul id="web-menu">
+            <!--Community dropdown tab to navigate to individual communities. Additional links to input form and about pages.-->
+            <li>Communities
                 <ul>
-                    <li><a href="Woods.html">The Woods</a></li>
-                    <li><a href="Trails.html">The Trails</a></li>
-                    <li><a href="Village.html">The Village</a></li>
+                    <li><a href="/pages/woods.html">The Woods</a></li>
+                    <li><a href="/pages/trails.html">The Trails</a></li>
+                    <li><a href="/pages/village.html">The Village</a></li>
+                </ul>
+            </li>
+            <li><a href="/pages/form.html">Participate</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+        </ul>
+        <!--The mobile based viewing menu. displays a hamburger menu to show other pages for website.-->
+        <ul id="mobile-menu">
+            <li><img class="mobile-button" src="/media/images/hamburger-button-menu.png" alt="hamburger menu button">
+                <ul>
+                    <li><a href="/pages/woods.html">The Woods</a></li>
+                    <li><a href="/pages/trails.html">The Trails</a></li>
+                    <li><a href="/pages/village.html">The Village</a></li>
+                    <li><a href="/pages/form.html">Participate</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
                 </ul>
             </li>
         </ul>
-        <a href="About.html">About</a>
-    </nav>
-    <nav id="#mobile-menu">
-
     </nav>
     <main id="woods-main">
+        <header>
+            <h1>Welcome to McCormick Woods!</h1>
+        </header>
         <div class="row-right">
             <section class="long-float">
+                <!--*mobile component* title used only when screen is < 1184px-->
+                <header class="mobile-table-title">
+                    <h2 class="community-title">Community Activities</h2>
+                </header>
+                <!--Table for displaying Community Watch items of concern. Tables
+                would be filled out using JS and a connected SQL or NonSQL database-->
                 <table>
                     <tr>
                         <th>DATE</th>
-                        <th>LOCATION</th>
                         <th>DESCRIPTION</th>
+                        <th>LOCATION</th>
                     </tr>
                     <tr>
-                        <!--These tables would be filled out with JS using data imported from a database.-->
+                        <td>2024-06-01</td>
+                        <td>Annual Summer Picnic</td>
+                        <td>Mary McCormick Memorial Park</td>
+                    </tr>
+                    <tr>
+                        <td>2024-06-15</td>
+                        <td>Neighborhood Yard Sale</td>
+                        <td>Trails Neighborhood Park</td>
+                    </tr>
+                    <tr>
+                        <td>2024-07-04</td>
+                        <td>Independence Day Fireworks</td>
+                        <td><a
+                                href="https://www.google.com/maps/search/5155+McCormick+Woods+Dr+47.501813425166056,+-122.68932323232725/@47.5018221,-122.6896224,20.86z?entry=ttu">
+                                McCormick Clubhouse</a></td>
+                    </tr>
+                    <tr>
+                        <td>2024-07-20</td>
+                        <td>Book Reading by Local Author</td>
+                        <td>Public Library</td>
+                    </tr>
+                    <tr>
+                        <td>2024-08-05</td>
+                        <td>Pickle-Ball Tournament</td>
+                        <td>Tennis Court #4</td>
+                    </tr>
+                    <tr>
+                        <td>2024-08-21</td>
+                        <td>Charity 5k</td>
+                        <td>Big Pond Trail</td>
+                    </tr>
+                    <tr>
+                        <td>2024-09-10</td>
+                        <td>Annual HOA Meeting</td>
+                        <td>McCormick Culbhouse Conferance Room</td>
                     </tr>
                 </table>
             </section>
             <aside class="short-float">
-                <h1 class="community-title">Community Activities</h1>
+                <h2 class="community-title">Community Activities</h2>
             </aside>
         </div>
         <div class="row-left">
             <aside class="short-float">
-                <h1 class="community-title">Community Watch</h1>
+                <h2 class="community-title">Community Watch</h2>
             </aside>
             <section class="long-float">
+                <!--*mobile component* title used only when screen is < 1184px-->
+                <header class="mobile-table-title">
+                    <h2 class="community-title">Community Watch</h2>
+                </header>
+                <!--Table for displaying Community Watch items of concern. Tables
+                would be filled out using JS and a connected SQL or NonSQL database-->
                 <table>
                     <tr>
                         <th>DATE</th>
-                        <th>LOCATION</th>
                         <th>DESCRIPTION</th>
+                        <th>LOCATION</th>
                     </tr>
                     <tr>
-                        <!--These tables would be filled out with JS using data imported from a database.-->
+                        <td>2024-06-02</td>
+                        <td>Lost Dog</td>
+                        <td>Deer Park</td>
+                    </tr>
+                    <tr>
+                        <td>2024-05-31</td>
+                        <td>Car Theft</td>
+                        <td>Eldon Trails Division</td>
+                    </tr>
+                    <tr>
+                        <td>2024-05-24</td>
+                        <td>Littering</td>
+                        <td>Big Pond Trail</td>
+                    </tr>
+                    <tr>
+                        <td>2024-05-21</td>
+                        <td>Shady Vehicle</td>
+                        <td>Yellow pontiac driving around</td>
+                    </tr>
+                    <tr>
+                        <td>2024-05-10</td>
+                        <td>Henderson's Dog</td>
+                        <td>Dog was not leashed and was running in the street</td>
                     </tr>
                 </table>
             </section>
         </div>
     </main>
-    <footer>
-        <p>&#169; Seth A Campbell 2024</p>
+    <!--Basic footer with contact info, disclaimers, and designer.-->
+    <footer class="grid-container">
+        <div class="grid-item-1">
+            <p>© 2024 McCormick LLC. All Rights Reserved. </p>
+        </div>
+        <div class="grid-item-2">
+            <p> McCormick LLC Housing Communities strives to provide quality living spaces for families and individuals.
+                Our communities are designed with comfort, convenience, and sustainability in mind, ensuring a
+                harmonious
+                living environment for all residents.</p>
+        </div>
+        <div class="grid-item-3">
+            <p>Contact Us:</p>
+            <ul>
+                <li>Email: info@mccormickllc.com</li>
+                <li>Phone: (123) 456-7890</li>
+            </ul>
+        </div>
+        <div class="grid-item-4">
+            <p>&#169; Seth A Campbell 2024</p>
+        </div>
     </footer>
 </body>
+
 </html>
